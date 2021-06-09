@@ -12,19 +12,25 @@
     <nav class="timer"></nav>
 
     <div class="container">
-        <div class="homeMenu box">
+        <div id="homeMenu" class="homeMenu box">
             <h1>Coding Quiz!</h1>
 
             <p>Test your coding knowledge with this fun quiz! Answer the questions as quickly as possible for a high score!</p>
 
-            <button class="startBtn">Start!</button>
+            <button id="startBtn" class="startBtn">Start!</button>
         </div>
 
-        <div class="quizQuestions box hide">
-
+        <div id="quizQuestions" class="quizQuestions box hide">
+            <h2 id="question">Question</h2>
+            <div id="answerGrid" class="answerGrid">
+                <button class="choice">A</button>
+                <button class="choice">B</button>
+                <button class="choice">C</button>
+                <button class="choice">D</button>
+            </div>
         </div>
 
-        <div class="gameOver box hide">
+        <div id="gameOver" class="gameOver box hide">
 
             <h1>Game Over!</h1>
 
@@ -34,7 +40,7 @@
 
         </div>
 
-        <div class="enterInitials box hide">
+        <div id="enterInitials" class="enterInitials box hide">
 
             <h1>Great Job!</h1>
             <p>Enter your intials to set your score!</p>
@@ -43,7 +49,7 @@
 
         </div>
 
-        <div class="highScores box hide">
+        <div id="highScores" class="highScores box hide">
             <h1>High Scores</h1>
 
             <ul class="scoreList">

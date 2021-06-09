@@ -1,4 +1,58 @@
+var startBtnEl = document.getElementById('startBtn')
+var homeMenuEl = document.getElementById('homeMenu')
+var quizQuestionsEl = document.getElementById('quizQuestions')
+var gameOverEl = document.getElementById('gameOver')
+var enterInitialsEl = document.getElementById('enterInitials')
+var highScoresEl = document.getElementById('highScores')
+
+var questionEl = document.getElementById('question')
+
+
+var questionList = [
+    {
+        question: "Which of these is NOT one of the three main coding languages?",
+        answers: [
+            {text: "CSS", correct:false},
+            {text: "Java", correct:true},
+            {text: "JavaScript", correct:false},
+            {text: "HTML", correct:false}
+        ]
+    },
+
+    {
+        question: "Which of these is NOT one of the three main coding languages?",
+        answers: [
+            {text: "CSS", correct:false},
+            {text: "Java", correct:true},
+            {text: "JavaScript", correct:false},
+            {text: "HTML", correct:false}
+        ]
+    }
+    
+]
+
 // Start page with button that begins the quiz
+startBtnEl.addEventListener("click", startGame)
+
+function startGame() {
+    homeMenuEl.classList.add('hide')
+    quizQuestionsEl.classList.remove("hide")
+    questionList.sort()
+    nextQuestion()
+
+}
+
+function nextQuestion() {
+    questionEl.textContent = questionList[0].question;
+    
+}
+
+
+
+
+
+
+
 
 // User clicks button. Quiz starts
 
