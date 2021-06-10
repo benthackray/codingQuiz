@@ -1,3 +1,24 @@
+var questionList = [
+    {
+        question: "Which of these is NOT one of the three main coding languages?",
+        choiceA: "CSS",
+        choiceB: "Java",
+        choiceC: "JavaScript",
+        choiceD: "HTML",
+        answer: "Java"
+    },
+
+    {
+        question: "What does HTML stand for?",
+        choiceA: "HyperText Markup Language",
+        choiceB: "Helpful Tech Module Lists",
+        choiceC: "Hyperweb Text Manipulation Language",
+        choiceD: "Hey! That's My Lettuce!",
+        answer: "HyperText Markup Language",
+    }
+    
+]
+
 var startBtnEl = document.getElementById('startBtn')
 var homeMenuEl = document.getElementById('homeMenu')
 var quizQuestionsEl = document.getElementById('quizQuestions')
@@ -7,48 +28,58 @@ var highScoresEl = document.getElementById('highScores')
 
 var questionEl = document.getElementById('question')
 
+var questionIndex = 0;
+var currentQuestion = questionList[questionIndex]
+var answerGridEl = document.getElementById('answerGrid')
+var choiceAEl = document.getElementById('choiceA')
+var choiceBEl = document.getElementById('choiceB')
+var choiceCEl = document.getElementById('choiceC')
+var choiceDEl = document.getElementById('choiceD')
 
-var questionList = [
-    {
-        question: "Which of these is NOT one of the three main coding languages?",
-        answers: [
-            {text: "CSS", correct:false},
-            {text: "Java", correct:true},
-            {text: "JavaScript", correct:false},
-            {text: "HTML", correct:false}
-        ]
-    },
 
-    {
-        question: "Which of these is NOT one of the three main coding languages?",
-        answers: [
-            {text: "CSS", correct:false},
-            {text: "Java", correct:true},
-            {text: "JavaScript", correct:false},
-            {text: "HTML", correct:false}
-        ]
-    }
-    
-]
+
 
 // Start page with button that begins the quiz
 startBtnEl.addEventListener("click", startGame)
 
 function startGame() {
-    homeMenuEl.classList.add('hide')
-    quizQuestionsEl.classList.remove("hide")
-    questionList.sort()
-    nextQuestion()
+    homeMenuEl.classList.add('hide');
+    quizQuestionsEl.classList.remove("hide");
+    questionIndex = 0;
+    nextQuestion();
 
 }
 
-function nextQuestion() {
-    questionEl.textContent = questionList[0].question;
+choiceAEl.addEventListener('click', checkAnswer)
+choiceBEl.addEventListener('click', checkAnswer)
+choiceCEl.addEventListener('click', checkAnswer)
+choiceDEl.addEventListener('click', checkAnswer)
+
+
+
+function checkAnswer(){
+    questionIndex = questionIndex + 1;
+    nextQuestion;
+    console.log(this.textContent);
+    if (this.textContent===currentQuestion.answer){
+        
+        console.log("nothing taken off timer");
+    }else {
+        console.log("fifteen seconds off timer");
+    }
     
 }
 
-
-
+function nextQuestion() {
+    questionEl.textContent = currentQuestion.question;
+    choiceAEl.textContent = currentQuestion.choiceA;
+    choiceBEl.textContent = currentQuestion.choiceB;
+    choiceCEl.textContent = currentQuestion.choiceC;
+    choiceDEl.textContent = currentQuestion.choiceD;
+    
+    console.log(questionIndex)
+    
+}
 
 
 

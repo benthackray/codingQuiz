@@ -29,3 +29,16 @@ body {
 .hide {
     display: none;
 }
+
+.answerGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+button {
+    flex: 0 0 45%;
+    font-size: 2rem;
+    margin: 5px;
+}
